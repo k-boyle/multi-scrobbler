@@ -114,7 +114,7 @@ export default class PlexSource extends AbstractSource {
             }
         }
 
-        if (event !== undefined && event !== 'media.scrobble') {
+        if (event !== undefined && event !== 'media.play') {
             this.logger.debug(`Will not scrobble event because it is not media.scrobble (${event})`, {
                 artists,
                 track
