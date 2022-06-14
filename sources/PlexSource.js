@@ -114,13 +114,13 @@ export default class PlexSource extends AbstractSource {
             }
         }
 
-        if (event !== undefined && event !== 'media.play') {
-            this.logger.debug(`Will not scrobble event because it is not media.scrobble (${event})`, {
-                artists,
-                track
-            })
-            return false;
-        }
+        // if (event !== undefined && (event !== 'media.play' || event !== 'media.stop')) {
+        //     this.logger.debug(`Will not scrobble event because it is not media.scrobble (${event})`, {
+        //         artists,
+        //         track
+        //     })
+        //     return false;
+        // }
 
         if (mediaType !== 'track') {
             this.logger.debug(`Will not scrobble event because media type was not a track (${mediaType})`, {

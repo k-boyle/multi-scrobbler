@@ -283,9 +283,12 @@ const configDir = process.env.CONFIG_DIR || `${process.cwd()}/config`;
             res.send('OK');
         });
 
-        app.postAsync('/plex', upload.any(), async function (req, res) {
-            logger.debug(req);
+        const testMiddle = (req, res, next) => {
+            const f = 1;
+            next();
+        }
 
+        app.postAsync('/plex', testMiddle, upload.any(), async function (req, res) {
             const {
                 body: {
                     payload
